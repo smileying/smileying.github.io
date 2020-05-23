@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -17,19 +17,19 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="1. 开始hexo官网： https:&#x2F;&#x2F;hexo.io&#x2F; 1234567891011121314151617&#x2F;&#x2F; 1.安装hexo-clinpm install hexo-cli -g&#x2F;&#x2F; 2.初始化blog目录hexo init myblog&#x2F;&#x2F; 3.安装依赖包cd myblognpm install&#x2F;&#x2F; 4.启动hexo server&#x2F;&#x2F; 5.本地预览http:&#x2F;&#x2F;localhost:400">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建hexo博客">
 <meta property="og:url" content="http://yoursite.com/2020/05/23/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="smileying的博客">
 <meta property="og:description" content="1. 开始hexo官网： https:&#x2F;&#x2F;hexo.io&#x2F; 1234567891011121314151617&#x2F;&#x2F; 1.安装hexo-clinpm install hexo-cli -g&#x2F;&#x2F; 2.初始化blog目录hexo init myblog&#x2F;&#x2F; 3.安装依赖包cd myblognpm install&#x2F;&#x2F; 4.启动hexo server&#x2F;&#x2F; 5.本地预览http:&#x2F;&#x2F;localhost:400">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-23T06:26:49.000Z">
-<meta property="article:modified_time" content="2020-05-23T07:46:10.719Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2020-05-23T08:24:41.916Z">
+<meta property="article:author" content="smileying">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/05/23/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/">
@@ -41,11 +41,11 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'en'
+    lang   : 'zh-CN'
   };
 </script>
 
-  <title>搭建hexo博客 | Hexo</title>
+  <title>搭建hexo博客 | smileying的博客</title>
   
 
 
@@ -85,7 +85,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -96,7 +96,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
+      <h1 class="site-title">smileying的博客</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -114,12 +114,12 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
   </ul>
@@ -149,17 +149,17 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/23/%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="smileying">
+      <meta itemprop="description" content="keep learning">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="smileying的博客">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -171,10 +171,10 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="Created: 2020-05-23 14:26:49 / Modified: 15:46:10" itemprop="dateCreated datePublished" datetime="2020-05-23T14:26:49+08:00">2020-05-23</time>
+              <time title="创建时间：2020-05-23 14:26:49 / 修改时间：16:24:41" itemprop="dateCreated datePublished" datetime="2020-05-23T14:26:49+08:00">2020-05-23</time>
             </span>
 
           
@@ -223,8 +223,8 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: github仓库地址</span><br><span class="line">  branch: master</span><br><span class="line">  message: update blog</span><br></pre></td></tr></table></figure>
 
-<h3 id="博客源码存储"><a href="#博客源码存储" class="headerlink" title="博客源码存储"></a>博客源码存储</h3><p>deploy后悔发现github仓库并没有本地的所有代码，为方便存储可以新建一个仓库存储源码,这样可以像管理代码一样来管理博客的原始文件及配置等</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote set-url --push origin  https:&#x2F;&#x2F;github.com&#x2F;smileying&#x2F;blogs.git</span><br><span class="line">git push --set-upstream origin master</span><br></pre></td></tr></table></figure>
+<h3 id="博客源码存储"><a href="#博客源码存储" class="headerlink" title="博客源码存储"></a>博客源码存储</h3><p>deploy后悔发现github仓库并没有本地的所有代码，为方便存储可以新建一个分支存储源码, 这样可以像管理代码一样来管理博客的原始文件及配置等</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote <span class="keyword">set</span>-url --push origin  仓库</span><br><span class="line">git push --<span class="keyword">set</span>-upstream origin hexo // hexo分支用来存储源码</span><br></pre></td></tr></table></figure>
 
 <p>注意：<br>安装的主题next可能会提示已经是一个仓库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hint: If you meant to add a submodule, use:</span><br><span class="line">hint: </span><br><span class="line">hint:   git submodule add &lt;url&gt; themes&#x2F;next</span><br><span class="line">hint: </span><br><span class="line">hint: If you added this path by mistake, you can remove it from the</span><br><span class="line">hint: index with:</span><br><span class="line">hint: </span><br><span class="line">hint:   git rm --cached themes&#x2F;next</span><br></pre></td></tr></table></figure>
@@ -236,7 +236,20 @@
 <p>常用命令：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span>  <span class="string">"postname"</span> <span class="comment">// 新建文章</span></span><br><span class="line">hexo <span class="keyword">new</span> page <span class="string">"pagename"</span> <span class="comment">// 新建页面</span></span><br><span class="line">hexo generate <span class="comment">// 生成静态文件值public文件夹</span></span><br><span class="line">hexo server <span class="comment">// 本地预览端口，默认4000</span></span><br><span class="line">hexo deploy <span class="comment">// 部署到github</span></span><br></pre></td></tr></table></figure>
 
+<p>缩写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n -&gt; hexo <span class="keyword">new</span></span><br><span class="line">hexo g -&gt; hexo generate</span><br><span class="line">hexo s -&gt; hexo server</span><br><span class="line">hexo d -&gt; hexo deploy</span><br></pre></td></tr></table></figure>
 
+
+<h1 id="5-基础博客配置-amp-next-主题美化"><a href="#5-基础博客配置-amp-next-主题美化" class="headerlink" title="5. 基础博客配置 &amp;next 主题美化"></a>5. 基础博客配置 &amp;<code>next</code> 主题美化</h1><h3 id="5-1-基础配置"><a href="#5-1-基础配置" class="headerlink" title="5.1 基础配置"></a>5.1 基础配置</h3><p>根目录下<code>_config.yml</code>:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="5-2-next主题美化"><a href="#5-2-next主题美化" class="headerlink" title="5.2 next主题美化"></a>5.2 <code>next</code>主题美化</h3><h4 id="5-2-1-主题选择"><a href="#5-2-1-主题选择" class="headerlink" title="5.2.1 主题选择"></a>5.2.1 主题选择</h4><p><code>next</code>支持的默认主题有四种，可以在<code>themes/next</code>目录下<code>_config.yml</code>文件中看到，可以切换不同的主题，选择一种</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment"># scheme: Muse</span></span><br><span class="line"><span class="comment"># scheme: Mist</span></span><br><span class="line"><span class="comment"># scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-2-2-next主题的其他设置"><a href="#5-2-2-next主题的其他设置" class="headerlink" title="5.2.2 next主题的其他设置"></a>5.2.2 <code>next</code>主题的其他设置</h4><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.cnblogs.com/tengj/p/5352572.html" target="_blank" rel="noopener">https://www.cnblogs.com/tengj/p/5352572.html</a></p>
+<p><a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html</a></p>
+<p><a href="https://blog.csdn.net/nightmare_dimple/article/details/86661502" target="_blank" rel="noopener">https://blog.csdn.net/nightmare_dimple/article/details/86661502</a></p>
 
     </div>
 
@@ -305,23 +318,23 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-开始"><span class="nav-number">1.</span> <span class="nav-text">1. 开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">1.1.</span> <span class="nav-text">hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-设置主题"><span class="nav-number">2.</span> <span class="nav-text">2. 设置主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-选择主题next"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1 选择主题next</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-主题设置"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.2 主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-主题下载"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">2.2.1 主题下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-主题设置"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">2.2.2 主题设置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-预览新的主题"><span class="nav-number">2.0.3.</span> <span class="nav-text">2.3 预览新的主题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-设置博客地址"><span class="nav-number">3.</span> <span class="nav-text">3. 设置博客地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-创建仓库"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 创建仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-发布"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2 发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客源码存储"><span class="nav-number">3.0.3.</span> <span class="nav-text">博客源码存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册域名"><span class="nav-number">3.0.4.</span> <span class="nav-text">注册域名</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-创建一篇博客-amp-常用命令"><span class="nav-number">4.</span> <span class="nav-text">4. 创建一篇博客&amp;常用命令</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-开始"><span class="nav-number">1.</span> <span class="nav-text">1. 开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">1.1.</span> <span class="nav-text">hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-设置主题"><span class="nav-number">2.</span> <span class="nav-text">2. 设置主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-选择主题next"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1 选择主题next</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-主题设置"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.2 主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-主题下载"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">2.2.1 主题下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-主题设置"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">2.2.2 主题设置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-预览新的主题"><span class="nav-number">2.0.3.</span> <span class="nav-text">2.3 预览新的主题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-设置博客地址"><span class="nav-number">3.</span> <span class="nav-text">3. 设置博客地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-创建仓库"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 创建仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-发布"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2 发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客源码存储"><span class="nav-number">3.0.3.</span> <span class="nav-text">博客源码存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册域名"><span class="nav-number">3.0.4.</span> <span class="nav-text">注册域名</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-创建一篇博客-amp-常用命令"><span class="nav-number">4.</span> <span class="nav-text">4. 创建一篇博客&amp;常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-基础博客配置-amp-next-主题美化"><span class="nav-number">5.</span> <span class="nav-text">5. 基础博客配置 &amp;next 主题美化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-基础配置"><span class="nav-number">5.0.1.</span> <span class="nav-text">5.1 基础配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-next主题美化"><span class="nav-number">5.0.2.</span> <span class="nav-text">5.2 next主题美化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-1-主题选择"><span class="nav-number">5.0.2.1.</span> <span class="nav-text">5.2.1 主题选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-2-next主题的其他设置"><span class="nav-number">5.0.2.2.</span> <span class="nav-text">5.2.2 next主题的其他设置</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
+  <p class="site-author-name" itemprop="name">smileying</p>
+  <div class="site-description" itemprop="description">keep learning</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -329,7 +342,7 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">2</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
   </nav>
@@ -360,9 +373,9 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">smileying</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -388,7 +401,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
