@@ -6,17 +6,86 @@ categories:
 tags:
 - Hexo
 ---
+# 说明
+本文配置优化适合`hexo-theme-next`主题，要修改的配置copy至根目录下`_config.yml`中`theme_config`选项
 
-# 整体配置优化
+# 实时预览
 
-## 侧边栏设置
+```javascript
+// todo
+```
 
-侧边栏跟人信息展示区，主要包括头像，社交信息、文章目录，站点概览等
+# 侧边栏
+## 增加页面-标签&分类&归档
+
+`next`默认只有`home`和`archives`两个，可以添加更多：
+
+```yml
+menu:
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+
+menu_settings:
+  icons: true  # 是否显示各个页面的图标
+  badges: true # 是否显示分类/标签/归档页的内容量
+```
+
+然后依次生成对应的页面
+
+```javascript
+hexo new page about
+
+hexo new page tags
+
+hexo new page categories
+```
+
+`source`目录下生成对应文件夹，比如`tags`下有一个`index.md`:
+
+```markdown
+---
+title: tags
+date: 2020-05-23 20:53:37
+---
+```
+
+可以手动修改为：
+
+```markdown
+---
+title: 标签
+date: 2020-05-23 20:53:37
+type: "tags"
+---
+```
 
 
-### 作者信息展示
+## 作者信息展示
 
-### 文章目录
+- 头像设置
+  ```yml
+  # Sidebar Avatar
+  avatar:
+    url: /images/smileying.gif # source目录下新建images文件夹，放置头像
+    rounded: false # 是否设置圆形头像
+  ```
+- 信息展示
+  ```yml
+  # Site
+  description: 'keep learning'
+  keywords:
+  author: smileying
+  ```
+- 社交信息展示
+  ```yml
+  social:
+    GitHub: https://github.com/smileying || fab fa-github
+  ```
+
+## 文章目录展示位置
 
 `next`主题配置：
 
@@ -24,20 +93,44 @@ tags:
 post_navigation: left
 ```
 
-## 实时预览
+## 博客底部信息展示
 
-## 博客底部布局
+可以设置站点信息，备案信息等，`footer`
 
-## 博客摘要显示
+```yml
+footer:
+  since: 2020  # 建站时间
+  # Icon between year and copyright info.
+  icon:
+    # Icon name in Font Awesome. See: https://fontawesome.com/icons
+    name: fa fa-heart # 作者图标
+    # If you want to animate the icon, set it to true.
+    animated: false  # 图标是否闪动
+    # Change the color of icon, using Hex Code.
+    color: "#ff0000" # 图标颜色
+  
+  # If not defined, `author` from Hexo `_config.yml` will be used.
+  copyright: smileying
+
+  powered: false
+
+  beian: # 网站备案信息
+    enable: false
+```
 
 # 增加搜索
+
+```javascript
+// todo
+```
+
 
 - 安装
   ```javascript
   npm install hexo-generator-searchdb --save
   ```
 
-- 修改根目录下的`_config.yml`， 增加`search`配置:
+- 根目录的`_config.yml`， 增加`search`配置:
   ```yml
   search:
     path: search.html
@@ -46,65 +139,30 @@ post_navigation: left
     format: html
   ```
 
-
-- 修改`next`主题配置`_config.yml`:
+- 修改`next`主题配置`_config.yml`--`theme_config`:
   
   ```yml
   local_search:
     enable: true
   ```
 
+# 文章写作相关
 
-# 标签&分类&归档
+## 文章增加标签或分类
 
-## 配置
+默认生成的文章格式为：
 
-`next`主题下`_config.yml`中：
-
-```yml
-# Menu Settings
-menu:
-  home: / || fa fa-home
-  about: /about/ || fa fa-user
-  tags: /tags/ || fa fa-tags
-  categories: /categories/ || fa fa-th
-  archives: /archives/ || fa fa-archive
-  schedule: /schedule/ || fa fa-calendar
-
-menu_settings:
-  icons: true  # 是否显示各个页面的图标
-  badges: true # 是否显示分类/标签/归档页的内容量
-
-```
-
-## 生成tags page
-
-```javascript
-hexo new page tags
-```
-
-`source`目录下生成一个文件夹：`tags`:
-
-```javascript
+```markdown
 ---
-title: tags
-date: 2020-05-23 20:53:37
----
-```
-
-添加`type: "tags"`到内容中, 修改title为中文【标签】：
-
-```javascript
----
-title: tags
-date: 2020-05-23 20:53:37
-type: "tags"
+title: {{ title }}
+date: {{ date }}
+tags:
 ---
 ```
 
 文章中增加`tags`后，回自动关联，例如
 
-```javascript
+```markdown
 ---
 title: 从0到1搭建hexo博客（1）
 date: 2020-05-23 14:26:49
@@ -113,48 +171,48 @@ tags:
 ---
 ```
 
-至此，已经成功给文章添加分类，点击【标签】可以看到已经有的具体标签，点击具体的标签可以看到该标签下的所有文章。只有添加了`tags: xxx`的文章才会被收录到标签中。
+给文章添加分类后，点击【标签】可以看到已经有的具体标签，点击具体的标签可以看到该标签下的所有文章。只有添加了`tags: xxx`的文章才会被收录到标签中。
 
+每次都要手动增加有些麻烦，可以修改下文章生成的模板
 
-## 生成categories page
+## 文章模板设置
 
-步骤类似tags, 对应得更换为categories 
+修改`scaffolds`目录下的post.md,增加`categories`:
 
-```javascript
-hexo new page categories
-```
-
-```javascript
+```markdown
 ---
-title: categories
-date: 2020-05-23 20:59:07
----
-```
-
-```javascript
----
-title: 分类
-date: 2020-05-23 20:59:07
-type: categories
+title: {{ title }}
+date: {{ date }}
+categories:
+tags:
 ---
 ```
 
-
-
-
-
-
-
-
-# 文章写作相关
+这样设置后，默认新建的`post`会自动添加了`tags`/`categories`, 后面只需要增加实际的标签和分类即可。
 
 ## 文章缩略描述
 
+```javascript
+// todo
+```
+
 ## 增加文章版权信息
+
+```javascript
+// todo
+```
 
 ## 增加文章结束标志
 
+```javascript
+// todo
+```
+
 ## 增加阅读次数、时长和访客数
+
+```javascript
+// todo
+```
 
 - 安装插件
   ```javascript
@@ -199,27 +257,41 @@ type: categories
 
 ## 设置代码块样式
 
-### 修改`next`自带的代码块配置
-   
-  ```yml
-  # https://github.com/chriskempson/tomorrow-theme
-  codeblock:
-    highlight_theme: night
-    copy_button:
-      enable: true # 设置可复制
-      # Show text copy result.
-      show_result: false
-      # Available values: default | flat | mac
-      style:
-  ```
-### 自定义代码块展示
-   想要一种mac风格的代码展示
+修改主题配置：
 
+```yml
+codeblock:
+  # Code Highlight theme
+  # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
+  # See: https://github.com/chriskempson/tomorrow-theme
+  highlight_theme: night
+  # Add copy button on codeblock
+  copy_button:
+    enable: true
+    # Show text copy result.
+    show_result: true
+    # Available values: default | flat | mac
+    style: mac
+```
 
 ## 添加打赏
 
+```javascript
+// todo
+```
+
 ## 文章引入图片
+
+```javascript
+// todo
+```
 
 # 优化回到顶部按钮
 
-# 自定义样式
+```javascript
+// todo
+```
+
+# 参考
+
+https://www.qcmoke.site/blog/hexo_next.html

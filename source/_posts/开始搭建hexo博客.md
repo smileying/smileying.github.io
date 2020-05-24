@@ -9,6 +9,8 @@ tags:
 
 # 1. 开始
 
+采用Hexo+ GithubPage方式搭建自己的博客
+
 ## hexo
 
 官网： https://hexo.io/
@@ -39,15 +41,15 @@ http://localhost:4000/
 
 # 2. 设置主题
 
-### 2.1 选择主题next
+## 2.1 选择主题next
 
 选择一个自己喜欢的主题，这里选择我选了next：
 
-github地址： https://github.com/theme-next/hexo-theme-next
+github地址： `https://github.com/theme-next/hexo-theme-next`
 
-### 2.2 主题设置
+## 2.2 主题设置
 
-#### 2.2.1 主题下载
+### 2.2.1 主题下载
 
 ```javascript
 cd myblog
@@ -57,22 +59,22 @@ git clone https://github.com/theme-next/hexo-theme-next themes/next
 下载完成之后会在`themes`目录下看到`next`
 
 
-#### 2.2.2 主题设置
+### 2.2.2 主题设置
 
-修改根目录下的_config.yml
+修改根目录下的`_config.yml`:
 
-```javascript
+```yml
 theme: next
 ```
 
-### 2.3 预览新的主题
+## 2.3 预览新的主题
 
 
 ```javascript
 hexo generate
 ```
-重启本地服务之后访问http://localhost:4000/， 也可以采用新的端口：
 
+重启本地服务之后访问http://localhost:4000/， 也可以采用新的端口：
 
 ```javascript
 hexo server -p 5000
@@ -81,18 +83,18 @@ hexo server -p 5000
 `server`详细的用法见官网：
 https://hexo.io/docs/server.html
 
-# 3. 设置博客地址
+# 3.设置博客地址
 
 下面内容的前提条件：已经有一个github账号，SSH key已经配置好
 
-### 3.1 创建仓库
+## 3.1 创建仓库
 
 名称形式： `你的github用户名.github.io`， 则博客的访问地址就是：https://smileying.github.io/
 
 注意点：
 - 必须是用户名，其他名称不可以
 
-### 3.2 发布
+## 3.2 发布
 
 官网文档：https://hexo.io/docs/one-command-deployment#content-inner
 
@@ -101,7 +103,6 @@ https://hexo.io/docs/server.html
 
 ```javascript
 npm install hexo-deployer-git --save
-
 ```
 
 - 修改根目录`_config.yml`:
@@ -113,7 +114,7 @@ deploy:
   branch: master
 ```
 
-### 博客源码存储
+## 3.3 博客源码存储
 
 deploy后悔发现github仓库并没有本地的所有代码，为方便存储可以新建一个分支存储源码, 这样可以像管理代码一样来管理博客的原始文件及配置等
 
@@ -138,7 +139,7 @@ hint:
 hint:   git rm --cached themes/next
 ```
 
-### 注册域名
+## 3.4 注册域名
 
 如果有需要，可以注册域名，然后绑定，这里不做详细介绍
 
@@ -174,7 +175,7 @@ hexo d -> hexo deploy
 
 # 5 基础博客配置优化
 
-###  5.1 基础配置
+## 5.1 基础配置
 
 详细配置见根目录下`_config.yml`， 可以修改博客的基本信息，作者名称，展示等
 
@@ -187,12 +188,19 @@ hexo d -> hexo deploy
 - 增加`tag_generator`: 标签页的分页设置
 
 
-# 5.2 `next` 主题美化
+## 5.2 `next` 主题美化
 
-## 不改变next的主题配置文件的设置方法
+### 5.2.1 不改变next的主题配置文件的设置方法
+
 https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md
 
-#### 5.2.1 主题选择
+在`source`目录下新建`_data/next.yml`文件, 从`themes/next`目录下`_config.yml`复制所需要的配置更改即可
+
+```yml
+theme_config:
+  # 主题配置
+```
+### 5.2.2 主题选择
 
 `next`支持的默认主题有四种，可以在`themes/next`目录下`_config.yml`文件中看到，可以切换不同的主题，选择一种
 
@@ -205,7 +213,7 @@ https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.
 scheme: Gemini
 ```
 
-#### 5.2.2 `next`主题的其他设置
+### 5.2.3 `next`主题的其他设置
 
 - `custom_file_path`: 个性化配置
 - `favicon`: 可以更换网站图标
@@ -215,14 +223,12 @@ scheme: Gemini
 - `# Social Links`: 可以配置gihub等社交网站信息
 
 
-#### 5.2.3 个性化配置
-
 
 # 参考
+
 https://www.cnblogs.com/tengj/p/5352572.html
 
 https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html
-
 
 https://www.jianshu.com/p/8e9000cc1015
 

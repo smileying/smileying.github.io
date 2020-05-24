@@ -4,17 +4,17 @@
 
 # Site
 title: smileying的博客
-subtitle: '' 
+subtitle: ''
 description: 'keep learning'
-keywords:
+keywords: 
 author: smileying
-language: zh-CN # 主题语言
-timezone: Asia/Shanghai #中国的时区，不要乱改城市
+language: zh-CN
+timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com # 绑定域名
-root: / # 默认根路径，指向实际的source
+url: http://yoursite.com
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -29,25 +29,25 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: README.md # 部署的时候不包含的文件 
+skip_render: README.md # 部署的时候不包含的文件
 
 # Writing
-new_post_name: :title.md # File name of new posts 默认的新博文名称
-default_layout: post # 默认布局
+new_post_name: :title.md # File name of new posts
+default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
   exclude: ''
-filename_case: 0 # 把博客名称改成小写/大写（1，2）
-render_drafts: false # 是否显示草稿
-post_asset_folder: false # 是否启用资源文件夹（用来存放相对路径图片或文件）
-relative_link: false # 把链接改为与根目录的相对位址
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
 future: true
 highlight:
-  enable: true # 是否开启代码高亮
-  line_number: true  # 是否增加代码行号
-  auto_detect: false # 自动判断代码语言
+  enable: true
+  line_number: true
+  auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
@@ -56,10 +56,10 @@ highlight:
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
-index_generator: # 首页博客分布
-  path: '' # 博客的默认路径
-  per_page: 10 # 每页博客数量上限
-  order_by: -date # 博客排序
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
 
 # Category & Tag
 default_category: uncategorized
@@ -74,8 +74,8 @@ meta_generator: true
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD # 博客日期格式
-time_format: HH:mm:ss # 博客时间格式
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
 ## Use post's date for updated date unless set in front-matter
 use_date_for_updated: false
 
@@ -83,16 +83,6 @@ use_date_for_updated: false
 ## Set per_page to 0 to disable pagination
 per_page: 10
 pagination_dir: page
-
-# 归档页的分页设置
-archive_generator: #归档页的配置
-  per_page: 30 #归档页每页博客数
-  yearly: true #按年归档
-  monthly: true #按月归档
-
-#标签页的分页设置
-tag_generator:
-  per_page: 20 #标签页每页博客数
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
@@ -107,21 +97,131 @@ theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-
-# deploy:
-#   type: git
-#   repo: <repository url> # https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
-#   branch: [branch]
-#   message: [message]
-deploy:  #博客部署
+deploy:
   type: git
-  repo: https://github.com/smileying/smileying.github.io.git
+  repository: git@github.com:smileying/smileying.github.io.git
   branch: master
 
-# search 
-# https://github.com/theme-next/hexo-generator-searchdb
-search:
-  path: search.html
-  fiels: post # post page all
-  content: true
-  format: html
+# next theme config
+# https://hexo.io/zh-cn/docs/configuration.html
+# 主题的配置文件。在这里放置的配置会覆盖主题目录下的 _config.yml 中的配置
+theme_config:
+  #scheme: Muse
+  #scheme: Mist
+  #scheme: Pisces
+  scheme: Gemini
+
+  # Allow to cache content generation. Introduced in NexT v6.0.0.
+  cache:
+    enable: true 
+
+  footer:
+    # Specify the date when the site was setup. If not defined, current year will be used.
+    since: 2020 
+    # Icon between year and copyright info.
+    icon:
+      # Icon name in Font Awesome. See: https://fontawesome.com/icons
+      name: fa fa-heart # 作者图标
+      # If you want to animate the icon, set it to true.
+      animated: false  # 图标是否闪动
+      # Change the color of icon, using Hex Code.
+      color: "#ff0000" # 图标颜色
+
+    # If not defined, `author` from Hexo `_config.yml` will be used.
+    copyright: smileying
+
+    powered: false
+
+    # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
+    beian: # 网站备案信息
+      enable: false
+      icp:
+      # The digit in the num of gongan beian.
+      gongan_id:
+      # The full num of gongan beian.
+      gongan_num:
+      # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
+      gongan_icon_url:
+
+  menu:
+    home: / || fa fa-home
+    about: /about/ || fa fa-user
+    tags: /tags/ || fa fa-tags
+    categories: /categories/ || fa fa-th
+    archives: /archives/ || fa fa-archive
+    # schedule: /schedule/ || fa fa-calendar
+    # sitemap: /sitemap.xml || fa fa-sitemap
+    # commonweal: /404/ || fa fa-heartbeat
+  
+  # Enable / Disable menu icons / item badges.
+  menu_settings:
+    icons: true # 是否显示各个页面的图标
+    badges: true # 是否显示分类/标签/归档页的内容量
+  
+  sidebar:
+    position: left
+
+  # Sidebar Avatar
+  avatar:
+    # Replace the default image and set the url here.
+    # url: #/images/avatar.gif
+    url: /images/smileying.gif
+    # If true, the avatar will be dispalyed in circle.
+    rounded: false
+    # If true, the avatar will be rotated with the cursor.
+    rotated: false
+
+  # Posts / Categories / Tags in sidebar.
+  site_state: true
+
+  social:
+    GitHub: https://github.com/smileying || fab fa-github
+    #E-Mail: mailto:smileforever@163.com || fa fa-envelope
+  
+  social_icons:
+    enable: true
+    icons_only: false
+    transition: false
+
+  codeblock:
+    # Code Highlight theme
+    # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
+    # See: https://github.com/chriskempson/tomorrow-theme
+    highlight_theme: night
+    # Add copy button on codeblock
+    copy_button:
+      enable: true
+      # Show text copy result.
+      show_result: true
+      # Available values: default | flat | mac
+      style: mac
+  
+  back2top:
+    enable: true
+    # Back to top in sidebar.
+    sidebar: false
+    # Scroll percent label in b2t button.
+    scrollpercent: true
+
+  # Reading progress bar
+  reading_progress:
+    enable: true
+    # Available values: top | bottom
+    position: top
+    color: "#37c6c0"
+    height: 3px
+  
+  # Bookmark Support
+  bookmark:
+    enable: false
+    # Customize the color of the bookmark.
+    color: "#222"
+    # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
+    # If manual, only save it by clicking the bookmark-icon.
+    save: auto
+
+  # `Follow me on GitHub` banner in the top-right corner.
+  github_banner:
+    enable: true
+    permalink: https://github.com/smileying
+    title: Follow me on GitHub
