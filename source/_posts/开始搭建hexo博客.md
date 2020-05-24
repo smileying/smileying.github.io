@@ -189,6 +189,9 @@ hexo d -> hexo deploy
 
 # 5.2 `next` 主题美化
 
+## 不改变next的主题配置文件的设置方法
+https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md
+
 #### 5.2.1 主题选择
 
 `next`支持的默认主题有四种，可以在`themes/next`目录下`_config.yml`文件中看到，可以切换不同的主题，选择一种

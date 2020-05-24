@@ -13,10 +13,16 @@ tags:
 
 侧边栏跟人信息展示区，主要包括头像，社交信息、文章目录，站点概览等
 
+
 ### 作者信息展示
 
 ### 文章目录
 
+`next`主题配置：
+
+```yml
+post_navigation: left
+```
 
 ## 实时预览
 
@@ -64,6 +70,11 @@ menu:
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
   schedule: /schedule/ || fa fa-calendar
+
+menu_settings:
+  icons: true  # 是否显示各个页面的图标
+  badges: true # 是否显示分类/标签/归档页的内容量
+
 ```
 
 ## 生成tags page
@@ -137,6 +148,8 @@ type: categories
 
 # 文章写作相关
 
+## 文章缩略描述
+
 ## 增加文章版权信息
 
 ## 增加文章结束标志
@@ -200,8 +213,13 @@ type: categories
       style:
   ```
 ### 自定义代码块展示
-   
+   想要一种mac风格的代码展示
+
 
 ## 添加打赏
 
 ## 文章引入图片
+
+# 优化回到顶部按钮
+
+# 自定义样式
