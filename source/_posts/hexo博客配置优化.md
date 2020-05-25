@@ -286,6 +286,58 @@ codeblock:
 // todo
 ```
 
+
+## 文章末尾添加“本文结束”
+
+- 配置`_config_yml`中`theme_config`
+  ```yml
+  custom_file_path:
+    postBodyEnd: source/_data/post-body-end.swig
+  ```
+- `source/_data/post-body-end.swig`:
+  ```javascript
+    <div>
+      {% if not is_index %}
+          <br />
+          <div style="text-align:center;color: #ccc;font-size:14px;">
+          ----------- 本文结束 -----------
+          </div>
+          <br />
+      {% endif %}
+    </div>
+  ```
+
+## 修改文章底部带#号的标签
+
+在 `next/layout/_macro`下找到`post.swig`, 搜索`rel="tag"`
+
+```javascript
+<footer class="post-footer">
+  {%- if post.tags and post.tags.length %}
+    {%- if theme.tag_icon %}
+      {%- set tag_indicate = '<i class="fa fa-tag"></i>' %}
+    {% else %}
+      {%- set tag_indicate = '#' %}
+    {%- endif %}
+    <div class="post-tags">
+      {%- for tag in post.tags.toArray() %}
+        <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag_indicate }} {{ tag.name }}</a>
+      {%- endfor %}
+    </div>
+  {%- endif %}
+
+  {{ partial('_partials/post/post-footer.swig', {}, {cache: theme.cache.enable}) }}
+
+  {{ post_nav(post) }}
+</footer>
+```
+可以看出`theme.tag_icon`为`true`则展示标签图标，因此在`_config.yml`中设置`tag_icon`为`true`:
+
+```yml
+
+```
+
+
 # 优化回到顶部按钮
 
 ```javascript

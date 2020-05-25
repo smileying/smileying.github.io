@@ -115,6 +115,22 @@ theme_config:
   cache:
     enable: true 
 
+  # Define custom file paths.
+  # Create your custom files in site directory `source/_data` and uncomment needed files below.
+  custom_file_path:
+    #head: source/_data/head.swig
+    #header: source/_data/header.swig
+    #sidebar: source/_data/sidebar.swig
+    #postMeta: source/_data/post-meta.swig
+    postBodyEnd: source/_data/post-body-end.swig
+    # footer: source/_data/footer.swig
+    #bodyEnd: source/_data/body-end.swig
+    #variable: source/_data/variables.styl
+    #mixin: source/_data/mixins.styl
+    #style: source/_data/styles.styl
+
+ 
+
   footer:
     # Specify the date when the site was setup. If not defined, current year will be used.
     since: 2020 
@@ -182,6 +198,9 @@ theme_config:
     enable: true
     icons_only: false
     transition: false
+
+  # Use icon instead of the symbol # to indicate the tag at the bottom of the post
+  tag_icon: true # 设置文章地步标签展示#还是图标
 
   codeblock:
     # Code Highlight theme
