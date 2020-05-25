@@ -105,6 +105,19 @@
 
 <h2 id="文章引入图片"><a href="#文章引入图片" class="headerlink" title="文章引入图片"></a>文章引入图片</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// todo</span></span><br></pre></td></tr></table></figure>
 
+
+<h2 id="文章末尾添加“本文结束”"><a href="#文章末尾添加“本文结束”" class="headerlink" title="文章末尾添加“本文结束”"></a>文章末尾添加“本文结束”</h2><ul>
+<li>配置<code>_config_yml</code>中<code>theme_config</code><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">postBodyEnd:</span> <span class="string">source/_data/post-body-end.swig</span></span><br></pre></td></tr></table></figure></li>
+<li><code>source/_data/post-body-end.swig</code>:<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;% <span class="keyword">if</span> not is_index %&#125;</span><br><span class="line">      &lt;br /&gt;</span><br><span class="line">      &lt;div style=<span class="string">"text-align:center;color: #ccc;font-size:14px;"</span>&gt;</span><br><span class="line">      ----------- 本文结束 -----------</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;br /</span>&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="修改文章底部带-号的标签"><a href="#修改文章底部带-号的标签" class="headerlink" title="修改文章底部带#号的标签"></a>修改文章底部带#号的标签</h2><p>在 <code>next/layout/_macro</code>下找到<code>post.swig</code>, 搜索<code>rel=&quot;tag&quot;</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;footer <span class="class"><span class="keyword">class</span></span>=<span class="string">"post-footer"</span>&gt;</span><br><span class="line">  &#123;%- <span class="keyword">if</span> post.tags and post.tags.length %&#125;</span><br><span class="line">    &#123;%- <span class="keyword">if</span> theme.tag_icon %&#125;</span><br><span class="line">      &#123;%- <span class="keyword">set</span> tag_indicate = '&lt;i class="fa fa-tag"&gt;&lt;/i&gt;' %&#125;</span><br><span class="line">    &#123;% <span class="keyword">else</span> %&#125;</span><br><span class="line">      &#123;%- <span class="keyword">set</span> tag_indicate = '#' %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"post-tags"</span>&gt;</span><br><span class="line">      &#123;%- <span class="keyword">for</span> tag <span class="keyword">in</span> post.tags.toArray() %&#125;</span><br><span class="line">        &lt;a href=<span class="string">"&#123;&#123; url_for(tag.path) &#125;&#125;"</span> rel=<span class="string">"tag"</span>&gt;&#123;&#123; tag_indicate &#125;&#125; &#123;&#123; tag.name &#125;&#125;&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">      &#123;%- endfor %&#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;&#123; partial(<span class="string">'_partials/post/post-footer.swig'</span>, &#123;&#125;, &#123;<span class="attr">cache</span>: theme.cache.enable&#125;) &#125;&#125;</span><br><span class="line"></span><br><span class="line">  &#123;&#123; post_nav(post) &#125;&#125;</span><br><span class="line">&lt;<span class="regexp">/footer&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以看出<code>theme.tag_icon</code>为<code>true</code>则展示标签图标，因此在<code>_config.yml</code>中设置<code>tag_icon</code>为<code>true</code>:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 <h1 id="优化回到顶部按钮"><a href="#优化回到顶部按钮" class="headerlink" title="优化回到顶部按钮"></a>优化回到顶部按钮</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// todo</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.qcmoke.site/blog/hexo_next.html" target="_blank" rel="noopener">https://www.qcmoke.site/blog/hexo_next.html</a></p>
@@ -234,6 +247,17 @@
       </tags>
   </entry>
   <entry>
+    <title>Three.js入门</title>
+    <url>/2020/05/25/threejs-posts/Three-js%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Three.js</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ES6学习-Proxy</title>
     <url>/2020/05/25/javascript-posts/ES6%E5%AD%A6%E4%B9%A0-Proxy/</url>
     <content><![CDATA[]]></content>
@@ -257,20 +281,9 @@
         <category>React</category>
       </categories>
       <tags>
+        <tag>学习笔记</tag>
         <tag>React</tag>
         <tag>TypeScript</tag>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Three.js入门</title>
-    <url>/2020/05/25/threejs-posts/Three-js%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Three.js</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -281,8 +294,8 @@
         <category>TypeScript</category>
       </categories>
       <tags>
-        <tag>TypeScript</tag>
         <tag>学习笔记</tag>
+        <tag>TypeScript</tag>
       </tags>
   </entry>
   <entry>
