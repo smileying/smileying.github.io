@@ -1,6 +1,7 @@
 # 说明
 
 # 准备工作
+
 - 安装hexo
   
   ```javascript
@@ -9,7 +10,7 @@
 
 - `git clone xxx`
 
-- 切换到分支`hexo-new`
+- 切换到分支`hexo`
   
   ```javascript
   npm install
@@ -21,6 +22,10 @@
 cd 根目录
 git clone https://github.com/theme-next/hexo-theme-next themes/next
 ```
+
+ps: 出现`WARN No layout: index.html`，主要是因为未执行此步骤
+
+未将Next主题提交，是为了下一次可以同步最新的next主题
 
 - 主题配置文件所在位置
 

@@ -7,3 +7,9 @@ tags:
 - TypeScript
 - 学习笔记
 ---
+
+# 主要内容
+
+Typescript简介
+
+类型简介
