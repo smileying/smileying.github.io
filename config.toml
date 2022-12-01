@@ -2,3 +2,29 @@ baseURL = 'https://smileying.github.io'
 languageCode = 'en-us'
 title = 'Smileying‘s Blog'
 theme = 'stack'
+
+[author]
+    name = "Smileying"
+    homepage = "https://smileying.github.io"
+
+[params]
+    favicon = 'favicon.ico'
+    mainSections = ['posts']
+    featuredImageField = 'image'
+    rssFullContent = true
+
+[params.sidebar]
+    compact = false
+    subtitle = 'Keep Learning...'
+    [params.sidebar.avatar]
+        enable = true
+        local= true
+        src = 'img/smileying-avatar.png'
+
+[params.footer]
+    since = '2022'
+    customText = 'Powered by GitHub.Pages'   
+
+[params.colorScheme]
+    toggle = true
+    default = 'auto'
