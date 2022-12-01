@@ -7,8 +7,18 @@ theme = 'stack'
     name = "Smileying"
     homepage = "https://smileying.github.io"
 
+[menu]
+[[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = -90
+    identifier = "home"
+    [menu.main.params]
+        icon = 'home'
+        # newTab = true
+
 [params]
-    favicon = 'favicon.ico'
+    favicon = 'img/favicon.ico'
     mainSections = ['posts']
     featuredImageField = 'image'
     rssFullContent = true
@@ -21,6 +31,11 @@ theme = 'stack'
         local= true
         src = 'img/smileying-avatar.png'
 
+[params.article]
+    math = false
+    toc = true
+    readingTime = true
+
 [params.footer]
     since = '2022'
     customText = 'Powered by GitHub.Pages'   
@@ -28,3 +43,20 @@ theme = 'stack'
 [params.colorScheme]
     toggle = true
     default = 'auto'
+
+## Widgets
+[params.widgets]
+[[params.widgets.homepage]]
+    type = 'search'
+[[params.widgets.homepage]]
+    type = 'archives'
+    [params.widgets.homepage.params]
+        limit = 5
+[[params.widgets.homepage]]
+    type = 'categories'
+    [params.widgets.homepage.params]
+        limit = 10
+[[params.widgets.homepage]]
+    type = 'tag-cloud'
+    [params.widgets.homepage.params]
+        limit = 10

@@ -1,7 +1,13 @@
 ---
 title: "使用Hugo 搭建blog"
 date: 2022-11-30T19:02:02+08:00
-draft: true
+draft: false
+# image: 
+categories:
+    - Hugo 
+    - Test
+tags:
+    - hugo
 ---
 
 
@@ -34,9 +40,52 @@ draft: true
 
 `hugo`
 
+生成的内容会在 `public`文件下
+
 
 ## Stack主题修改
 
 https://stack.jimmycai.com/guide/modify-theme
 
-### 
+文档里可能不全, 可以看下项目的issues: [hugo-theme-stack](https://github.com/CaiJimmy/hugo-theme-stack)
+
+### favicon
+
+1. 新建目录`static/img`, `favicon.ico`放置在此目录下
+2. 配置文件修改
+
+```toml
+[params]
+    favicon = 'img/favicon.ico'
+```
+
+### 主页不显示内容？
+
+1. 修改 **mainSections**, `posts`为文件所在目录：`content/posts`
+
+```toml
+[params]
+    mainSections = ['posts']
+```
+
+2. 非草稿状态的文件才会显示 **draft**
+
+### 设置widget
+
+```toml
+[params.widgets]
+[[params.widgets.homepage]]
+    type = 'search'
+[[params.widgets.homepage]]
+    type = 'archives'
+    [params.widgets.homepage.params]
+        limit = 5
+[[params.widgets.homepage]]
+    type = 'categories'
+    [params.widgets.homepage.params]
+        limit = 10
+[[params.widgets.homepage]]
+    type = 'tag-cloud'
+    [params.widgets.homepage.params]
+        limit = 10
+```
