@@ -8,7 +8,7 @@ theme = 'stack'
     homepage = "https://smileying.github.io"
 
 [params]
-    favicon = 'favicon.ico'
+    favicon = 'img/favicon.ico'
     mainSections = ['posts']
     featuredImageField = 'image'
     rssFullContent = true
