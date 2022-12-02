@@ -2,6 +2,7 @@
 title: "使用Hugo 搭建blog"
 date: 2022-11-30T19:02:02+08:00
 draft: false
+toc: true
 # image: 
 categories:
     - Hugo 
@@ -52,7 +53,7 @@ https://stack.jimmycai.com/guide/modify-theme
 
 ### favicon
 
-1. 新建目录`static/img`, `favicon.ico`放置在此目录下
+1. 新建目录`static/img`， `favicon.ico`放置在此目录下
 2. 配置文件修改
 
 ```toml
@@ -69,7 +70,24 @@ https://stack.jimmycai.com/guide/modify-theme
     mainSections = ['posts']
 ```
 
-2. 非草稿状态的文件才会显示 **draft**
+2. 非草稿状态的文件才会显示 
+
+```markdown
+draft: false
+```
+
+### 设置边栏
+图片放到`assets/img`目录下
+
+```toml
+[params.sidebar]
+    compact = false
+    subtitle = 'Keep Learning...'
+    [params.sidebar.avatar]
+        enable = true
+        local= true
+        src = 'img/smileying-avatar.png'
+```
 
 ### 设置widget
 
@@ -89,4 +107,10 @@ https://stack.jimmycai.com/guide/modify-theme
     type = 'tag-cloud'
     [params.widgets.homepage.params]
         limit = 10
+```
+
+### 展示文章目录
+```toml
+[[params.widgets.page]]
+    type = 'toc'
 ```
