@@ -5,9 +5,10 @@ draft: false
 # image: 
 categories:
     - Hugo 
-    - Test
+    - React
+    - Vue
 tags:
-    - hugo
+    - tag1
 ---
 
 

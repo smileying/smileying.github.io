@@ -32,7 +32,7 @@ theme = 'stack'
         src = 'img/smileying-avatar.png'
 
 [params.article]
-    math = false
+    math = true
     toc = true
     readingTime = true
 
